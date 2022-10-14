@@ -1,5 +1,6 @@
-const { nanoid } = require("nanoid"); 
-const Books = require("./data/books");
+import Books from "../data/books";
+import { nanoid } from "nanoid";
+
 
 /**
  * TODO: add new Books to server
@@ -51,11 +52,6 @@ const editBookHandler = (request, h) => {}
  */ 
 const removeBookHandler = (request, h) => {}
 
-
-module.exports = {
-    addBookHandler,
-    getAllBookHandler,
-    getBookByIdHandler,
-    editBookHandler,
-    removeBookHandler
-}
+export {
+    addBookHandler
+};

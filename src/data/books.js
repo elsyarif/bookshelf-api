@@ -13,6 +13,6 @@ const Books = [
         "insertedAt": "2021-03-04T09:11:44.598Z",
         "updatedAt": "2021-03-04T09:11:44.598Z"
     },
-]
+];
 
-module.exports = Books
+export default Books;
