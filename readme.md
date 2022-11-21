@@ -1,1 +1,3 @@
-## Dicoding Submission Back-End untuk Pemula
+### Dicoding Submission Back-End untuk Pemula
+---
+- [X] Menggunakan Module ES6
