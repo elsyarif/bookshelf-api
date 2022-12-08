@@ -7,7 +7,6 @@ import { nanoid } from "nanoid";
  * 
  */
 export const addBookHandler = (request, h) => {
-    const nameProperty = request.payload.hasOwnProperty("name");
     const { name, year, author, summary, publisher, pageCount, readPage, reading } = request.payload;
     const id = nanoid(16);
     const finished = pageCount === readPage;
@@ -15,7 +14,7 @@ export const addBookHandler = (request, h) => {
     const updatedAt = insertedAt;
 
     // check property name and name not empty
-    if(!nameProperty || name === ""){
+    if(!name){
         const response = h.response({
             status: "fail",
             message: "Gagal menambahkan buku. Mohon isi nama buku"
@@ -210,11 +209,10 @@ export const getBookByIdHandler = (request, h) => {
  */
 export const editBookHandler = (request, h) => {
     const { bookId } = request.params;
-    const nameProperty = request.payload.hasOwnProperty("name");
     const { name, year, author, summary, publisher, pageCount, readPage, reading } = request.payload;
     const updatedAt = new Date().toISOString();
 
-    if(!nameProperty || name === ""){
+    if(!name){
         const response = h.response({
             status: "fail",
             message: "Gagal memperbarui buku. Mohon isi nama buku"
